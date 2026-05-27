@@ -49,8 +49,13 @@ export default function App() {
     try {
       const stored = localStorage.getItem(LOCAL_STORAGE_KEY);
       if (stored) {
-        const parsed = JSON.parse(stored) as GutItem[];
-        setItems(parsed);
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed)) {
+          setItems(parsed);
+        } else {
+          setItems(DEFAULT_GUT_ITEMS);
+          localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(DEFAULT_GUT_ITEMS));
+        }
       } else {
         // First load: Prefill with highly realistic electrical records
         setItems(DEFAULT_GUT_ITEMS);
