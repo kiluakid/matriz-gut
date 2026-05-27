@@ -1,0 +1,6 @@
+{
+  "name": "Matriz GUT - Manutenção Elétrica",
+  "description": "Matriz de priorização GUT (Gravidade, Urgência e Tendência) para gerenciamento de ocorrências e manutenção elétrica industrial.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
